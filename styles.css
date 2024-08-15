@@ -1,0 +1,235 @@
+/* Definindo variáveis para as cores da Gryffindor */
+:root {
+    --gryffindor-red: #740001;
+    --gryffindor-gold: #f7c300;
+    --bg-light: #fbfd83;
+    --text-dark: #333;
+    --text-light: #fff;
+    --border-light: #ddd;
+    --neon-blue: #00bfff; /* Cor fluorescente para o brilho */
+    --neon-green: #39ff14; /* Cor fluorescente para o brilho */
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+header {
+    background: linear-gradient(135deg, var(--gryffindor-red) 50%, var(--gryffindor-gold) 50%);
+    color: var(--text-light);
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+main {
+    margin-top: 100px; /* Espaço para o header fixo */
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-container {
+    background: var(--text-light);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    border: 4px solid var(--gryffindor-red);
+    background: #000; /* Fundo preto para efeito fluorescente */
+    color: var(--text-light);
+    box-shadow: 0 0 30px var(--neon-blue), 0 0 60px var(--neon-green);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: var(--gryffindor-red);
+    font-weight: bold;
+    padding: 10px;
+    background: var(--text-light);
+    border-radius: 10px;
+}
+
+.options {
+    margin: 20px 0;
+}
+
+.options label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--text-light);
+    border: 2px solid var(--gryffindor-red);
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.options label:hover {
+    background-color: var(--gryffindor-red);
+    color: var(--text-light);
+    border-color: var(--gryffindor-red);
+    transform: scale(1.02);
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--gryffindor-red);
+    color: var(--text-light);
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--gryffindor-gold);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+footer {
+    background-color: var(--gryffindor-red);
+    color: var(--text-light);
+    padding: 7px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 0.9em;
+}
+
+#timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--gryffindor-red);
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    box-shadow: 0 0 15px var(--neon-blue);
+    z-index: 1000; /* Garante que o timer fique sobre outros elementos */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2em;
+    }
+
+    .header-content p {
+        font-size: 1em;
+    }
+
+    .quiz-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .question {
+        font-size: 1.4em;
+    }
+
+    .options label {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+
+    #timer {
+        top: 10px;
+        right: 10px;
+        font-size: 1em;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.5em;
+    }
+
+    .header-content p {
+        font-size: 0.9em;
+    }
+
+    .quiz-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .question {
+        font-size: 1.2em;
+    }
+
+    .options label {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    #timer {
+        top: 5px;
+        right: 5px;
+        font-size: 0.9em;
+        padding: 6px;
+    }
+}
