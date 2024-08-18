@@ -13,9 +13,9 @@ const questions = [
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
 let incorrectAnswers = 0;
-let wrongQuestions = []; // Array para armazenar perguntas erradas
+let wrongQuestions = [];
 let timer;
-let timeRemaining = 60; // Tempo total em segundos
+let timeRemaining = 60;
 
 function displayQuestion(index) {
     const questionContainer = document.getElementById('question-container');
@@ -62,7 +62,7 @@ function nextQuestion() {
 }
 
 function showResult() {
-    clearInterval(timer); // Parar o timer quando o resultado for mostrado
+    clearInterval(timer);
 
     const questionContainer = document.getElementById('question-container');
     questionContainer.innerHTML = `
@@ -86,6 +86,21 @@ function showResult() {
             ${wrongQuestionsHTML}
         `;
     }
+
+    // Adiciona o botão "Jogar Novamente"
+    questionContainer.innerHTML += `
+        <button id="restart-button" class="btn btn-warning mt-3">Jogar Novamente</button>
+    `;
+
+    document.getElementById('restart-button').addEventListener('click', () => {
+        location.reload();
+    });
+
+    // Remover o botão "Próxima Pergunta"
+    const nextButton = document.getElementById('next-button');
+    if (nextButton) {
+        nextButton.remove();
+    }
 }
 
 function startTimer() {
@@ -104,6 +119,7 @@ function startTimer() {
 
 document.getElementById('next-button').addEventListener('click', nextQuestion);
 
-// Inicializar a primeira pergunta e o timer
 displayQuestion(currentQuestionIndex);
 startTimer();
+
+
