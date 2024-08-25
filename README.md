@@ -7,7 +7,6 @@ Este projeto é um quiz interativo desenvolvido para os fãs de Harry Potter. O 
 ## Funcionalidades
 
 - **Perguntas Aleatórias:** Cada vez que o usuário inicia o quiz, as perguntas são embaralhadas para proporcionar uma experiência única a cada tentativa.
-- **Feedback Imediato:** Após responder cada pergunta, o jogador recebe feedback imediato, sabendo se acertou ou errou.
 - **Pontuação:** O quiz calcula a pontuação total do jogador com base no número de respostas corretas.
 - **Design Temático:** Inspirado nas cores da Grifinória (vermelho e dourado), o design é atrativo e imersivo para os fãs da série.
 - **Experiência Responsiva:** Desenvolvido para ser acessível e funcional em dispositivos móveis e desktops.
